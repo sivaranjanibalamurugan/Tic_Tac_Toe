@@ -59,6 +59,25 @@ namespace TicTacToe
             }
         }
 
+        public char[] MovePosition(char[] board, char symbol)
+        {
+            //int position = 1;
+            DisplayBoard(board);
+            Console.WriteLine("Enter your choice of position");
+            int posChoice = Convert.ToInt32(Console.ReadLine());
+            if (board[posChoice] == ' ')
+            {
+                board[posChoice] = symbol;
+            }
+            else
+            {
+                Console.WriteLine("Position is already occupied.\nChoose another position");
+                board = MovePosition(board, symbol);
+
+            }
+            DisplayBoard(board);
+            return board;
+        }
     }
 
 }

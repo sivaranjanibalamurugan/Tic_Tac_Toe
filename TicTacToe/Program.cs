@@ -13,6 +13,8 @@ namespace TicTacToe
             char computerChoice = playerChoice == 'X' ? 'O' : 'X';
             Console.WriteLine("Player choice:{0} Computer Choice:{1}", playerChoice, computerChoice);
             ticTacToe.DisplayBoard(board);
+            board = ticTacToe.MovePosition(board, playerChoice);
+            board = ticTacToe.MovePosition(board, computerChoice);
         }
     }
 }
